@@ -19,7 +19,7 @@ it(`Should each card header be pressed`, () => {
       />
   );
 
-  const headers = main.find(`place-card__name`);
+  const headers = main.find(`.place-card__name`);
   headers.forEach((element) => element.props().onClick());
 
   expect(clickFn).toHaveBeenCalledTimes(testData.CARDS.length);
