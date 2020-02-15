@@ -4,7 +4,7 @@ import {CardPropType} from "../prop-validator/prop-validator";
 
 
 const Main = (props) => {
-  const {offersCount, cards} = props;
+  const {offersCount, cards, onHeaderClick} = props;
 
   const renderCards = () => cards.map((card, i) => (
     <article className="cities__place-card place-card" key={i}>
@@ -35,7 +35,7 @@ const Main = (props) => {
             <span className="visually-hidden">Rating</span>
           </div>
         </div>
-        <h2 className="place-card__name">
+        <h2 className="place-card__name" onClick={onHeaderClick}>
           <a href="#">
             {card.name}
           </a>
@@ -151,6 +151,7 @@ const Main = (props) => {
 Main.propTypes = {
   offersCount: PropTypes.number.isRequired,
   cards: PropTypes.arrayOf(CardPropType.INFO).isRequired,
+  onHeaderClick: CardPropType.HEADER_CLICK
 };
 
 export default Main;
