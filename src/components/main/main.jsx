@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import {CardPropType} from "../prop-validator/prop-validator";
 
 
 const Main = (props) => {
@@ -36,7 +37,7 @@ const Main = (props) => {
         </div>
         <h2 className="place-card__name">
           <a href="#">
-            {card}
+            {card.name}
           </a>
         </h2>
         <p className="place-card__type">Apartment</p>
@@ -149,7 +150,7 @@ const Main = (props) => {
 
 Main.propTypes = {
   offersCount: PropTypes.number.isRequired,
-  cards: PropTypes.array,
+  cards: PropTypes.arrayOf(CardPropType.INFO).isRequired,
 };
 
 export default Main;

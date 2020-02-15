@@ -4,8 +4,20 @@ import App from "./components/app/app.jsx";
 
 const Data = {
   OFFERS_COUNT: 312,
-  CARDS: [`Beautiful & luxurious apartment at great location`, `Wood and stone place`, `Canal View Prinsengracht`,
-    `Nice, cozy, warm big bed apartment`, `Best place to live`],
+  CARDS: [
+    {
+      name: `bed apartment`,
+    },
+    {
+      name: `bad apartment`,
+    },
+    {
+      name: `cosy apartment`,
+    },
+    {
+      name: `light apartment`,
+    },
+  ],
 };
 
 ReactDOM.render(
