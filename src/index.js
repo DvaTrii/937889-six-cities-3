@@ -18,11 +18,14 @@ const Data = {
       name: `light apartment`,
     },
   ],
+  HEADER_CLICK: () => {}
 };
 
 ReactDOM.render(
     <App
       offersCount = {Data.OFFERS_COUNT}
-      cards = {Data.CARDS}/>,
+      cards = {Data.CARDS}
+      onHeaderClick={Data.HEADER_CLICK}
+    />,
     document.querySelector(`#root`)
 );

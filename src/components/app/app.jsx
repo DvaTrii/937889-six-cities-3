@@ -4,10 +4,13 @@ import Main from "../main/main.jsx";
 import {CardPropType} from "../prop-validator/prop-validator";
 
 const App = (props) => {
-  const {offersCount, cards} = props;
+  const {offersCount, cards, onHeaderClick} = props;
 
   return (
-    <Main offersCount={offersCount} cards={cards}
+    <Main
+      offersCount={offersCount}
+      cards={cards}
+      onHeaderClick={onHeaderClick}
     />
   );
 };
@@ -15,6 +18,7 @@ const App = (props) => {
 App.propTypes = {
   offersCount: PropTypes.number.isRequired,
   cards: PropTypes.arrayOf(CardPropType.INFO).isRequired,
+  onHeaderClick: CardPropType.HEADER_CLICK
 };
 
 export default App;
