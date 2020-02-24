@@ -8,12 +8,12 @@ Enzyme.configure({
   adapter: new Adapter(),
 });
 
-it(`Should each card header be pressed`, () => {
+it(`Should card hover by mouseover`, () => {
   const hoverFn = jest.fn();
 
   const main = shallow(
       <OfferCard
-        cards={testCards.CARDS[0]}
+        card={testCards.CARDS[0]}
         onCardHover={hoverFn}
       />
   );

@@ -7,7 +7,7 @@ import OffersList from "./offers-list.jsx";
 it(`Render test OfferCard`, () => {
   const tree = renderer
     .create(<OffersList
-      card = {testCards.CARDS}
+      cards = {testCards.CARDS}
       onCardHover = {() => {}}
     />)
     .toJSON();

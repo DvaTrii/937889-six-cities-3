@@ -10,17 +10,8 @@ const OffersList = (props) => {
 };
 
 OffersList.propTypes = {
-  card: PropTypes.shape({
-    isPremium: PropTypes.bool.isRequired,
-    isBookmark: PropTypes.bool.isRequired,
-    price: PropTypes.number.isRequired,
-    image: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    type: PropTypes.string.isRequired,
-    rating: PropTypes.number.isRequired,
-  }),
-  onCardHover: PropTypes.func.isRequired
+  cards: PropTypes.array.isRequired,
+  onCardHover: PropTypes.func.isRequired,
 };
 
 export default OffersList;
-
