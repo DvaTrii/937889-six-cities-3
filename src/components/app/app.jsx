@@ -1,24 +1,24 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Main from "../main/main.jsx";
-import {CardPropType} from "../prop-validator/prop-validator";
+// import {CardPropType} from "../prop-validator/prop-validator";
 
 const App = (props) => {
-  const {offersCount, cards, onHeaderClick} = props;
+  const {offersCount, cards, onCardHover} = props;
 
   return (
     <Main
       offersCount={offersCount}
       cards={cards}
-      onHeaderClick={onHeaderClick}
+      onCardHover={onCardHover}
     />
   );
 };
 
 App.propTypes = {
   offersCount: PropTypes.number.isRequired,
-  cards: PropTypes.arrayOf(CardPropType.INFO).isRequired,
-  onHeaderClick: CardPropType.HEADER_CLICK
+  cards: PropTypes.array.isRequired,
+  onCardHover: PropTypes.func.isRequired,
 };
 
 export default App;
