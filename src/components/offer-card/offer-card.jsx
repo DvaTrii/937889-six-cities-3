@@ -63,3 +63,4 @@ OfferCard.propTypes = {
   onCardHover: PropTypes.func.isRequired
 };
 
+export default OfferCard;
