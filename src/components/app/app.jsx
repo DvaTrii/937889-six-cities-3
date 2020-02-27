@@ -1,19 +1,25 @@
-import React from "react";
+import React, {PureComponent} from "react";
 import PropTypes from "prop-types";
 import Main from "../main/main.jsx";
 // import {CardPropType} from "../prop-validator/prop-validator";
 
-const App = (props) => {
-  const {offersCount, cards, onCardHover} = props;
+class App extends PureComponent {
+  constructor(props) {
+    super(props);
+  }
 
-  return (
-    <Main
-      offersCount={offersCount}
-      cards={cards}
-      onCardHover={onCardHover}
-    />
-  );
-};
+  render() {
+    const {offersCount, cards, onCardHover} = this.props;
+
+    return (
+      <Main
+        offersCount={offersCount}
+        cards={cards}
+        onCardHover={onCardHover}
+      />
+    );
+  }
+}
 
 App.propTypes = {
   offersCount: PropTypes.number.isRequired,
