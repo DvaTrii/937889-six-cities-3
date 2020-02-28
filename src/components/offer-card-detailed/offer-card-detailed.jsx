@@ -1,5 +1,4 @@
 import React from "react";
-import OfferCard from "../offer-card/offer-card";
 
 const OfferCardDetailed = () => {
 
@@ -62,7 +61,7 @@ const OfferCardDetailed = () => {
                 </h1>
                 <button className="property__bookmark-button button" type="button">
                   <svg className="property__bookmark-icon" width="31" height="33">
-                    <use xlinkXref="#icon-bookmark"></use>
+                    <use xlinkHref="#icon-bookmark"></use>
                   </svg>
                   <span className="visually-hidden">To bookmarks</span>
                 </button>
