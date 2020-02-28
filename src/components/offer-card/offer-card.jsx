@@ -5,7 +5,7 @@ const OfferCard = (props) => {
 
   const {card, onCardHover} = props;
 
-  const {isPremium, isBookmark, price, images, name, type, rating} = card;
+  const {isPremium, isBookmark, price, images, title, type, rating} = card;
 
   return (
     <article className="cities__place-card place-card" onMouseOver={onCardHover}>
@@ -41,7 +41,7 @@ const OfferCard = (props) => {
         </div>
         <h2 className="place-card__name">
           <a href="#">
-            {name}
+            {title}
           </a>
         </h2>
         <p className="place-card__type">{type}</p>
@@ -56,7 +56,7 @@ OfferCard.propTypes = {
     isBookmark: PropTypes.bool.isRequired,
     price: PropTypes.number.isRequired,
     images: PropTypes.array.isRequired,
-    name: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
     type: PropTypes.string.isRequired,
     rating: PropTypes.number.isRequired,
   }),
