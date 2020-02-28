@@ -10,25 +10,38 @@ class App extends PureComponent {
     super(props);
 
     this.state = {
-      step: -1,
+      cardNumber: -1,
     };
   }
 
+  _renderCards() {
+    const {offersCount, cards, onCardHover} = this.props;
+    const {cardNumber} = this.state;
+
+    if (cardNumber === -1 || cardNumber >= cards.length) {
+      return (
+        <Main
+          offersCount={offersCount}
+          cards={cards}
+          onCardHover={onCardHover}
+        />
+      );
+    } else {
+      return (
+        <OfferCardDetailed />
+      );
+    }
+  }
+
   render() {
-    // const {offersCount, cards, onCardHover} = this.props;
 
     return (
-      // <Main
-      //   offersCount={offersCount}
-      //   cards={cards}
-      //   onCardHover={onCardHover}
-      // />
       <BrowserRouter>
         <Switch>
           <Route exact path="/">
-            {this._renderOffers()}
+            {this._renderCards()}
           </Route>
-          <Route exact path="/dev-card-detailed">
+          <Route exact path="/dev-card">
             <OfferCardDetailed />
           </Route>
         </Switch>
