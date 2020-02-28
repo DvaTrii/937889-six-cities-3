@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const OfferCardDetailed = (props) => {
 
@@ -9,8 +10,8 @@ const OfferCardDetailed = (props) => {
   const {name, photo, isSuper} = hostInfo;
 
   const renderImagesMarkup = () => images.map((image, i) => (
-    <div className="property__image-wrapper">
-      <img className="property__image" src={image} alt="Photo studio" key = {i}/>
+    <div className="property__image-wrapper" key = {i}>
+      <img className="property__image" src={image} alt="Photo studio"/>
     </div>
   ));
 
@@ -296,6 +297,27 @@ const OfferCardDetailed = (props) => {
       </main>
     </div>
   );
+};
+
+OfferCardDetailed.propTypes = {
+  card: PropTypes.shape({
+    isPremium: PropTypes.bool.isRequired,
+    isBookmark: PropTypes.bool.isRequired,
+    price: PropTypes.number.isRequired,
+    images: PropTypes.array.isRequired,
+    title: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
+    rating: PropTypes.number.isRequired,
+    description: PropTypes.string.isRequired,
+    facilities: PropTypes.array.isRequired,
+    bedroomsAmount: PropTypes.number.isRequired,
+    maxGuestsAmount: PropTypes.number.isRequired,
+    hostInfo: PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      photo: PropTypes.string.isRequired,
+      isSuper: PropTypes.bool.isRequired
+    })
+  }),
 };
 
 export default OfferCardDetailed;
