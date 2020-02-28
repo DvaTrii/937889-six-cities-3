@@ -8,6 +8,10 @@ import OfferCardDetailed from "../offer-card-detailed/offer-card-detailed.jsx";
 class App extends PureComponent {
   constructor(props) {
     super(props);
+
+    this.state = {
+      step: -1,
+    };
   }
 
   render() {
