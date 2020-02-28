@@ -63,8 +63,8 @@ const OfferCardDetailed = (props) => {
                 <h1 className="property__name">
                   {title}
                 </h1>
-                <button className={`place-card__bookmark-button ${isBookmark &&
-                `place-card__bookmark-button--active`} button`} type="button">
+                <button className={`property__bookmark-button button ${isBookmark &&
+                `property__bookmark-button--active`}`} type="button">
                   <svg className="property__bookmark-icon" width="31" height="33">
                     <use xlinkHref="#icon-bookmark"></use>
                   </svg>
@@ -76,7 +76,7 @@ const OfferCardDetailed = (props) => {
                   <span style={{width: `${20 * rating}%`}}></span>
                   <span className="visually-hidden">Rating</span>
                 </div>
-                <span className="property__rating-value rating__value">4.8</span>
+                <span className="property__rating-value rating__value">{rating}</span>
               </div>
               <ul className="property__features">
                 <li className="property__feature property__feature--entire">
@@ -147,35 +147,35 @@ const OfferCardDetailed = (props) => {
                     <input className="form__rating-input visually-hidden" name="rating" value="5" id="5-stars" type="radio"/>
                     <label htmlFor="5-stars" className="reviews__rating-label form__rating-label" title="perfect">
                       <svg className="form__star-image" width="37" height="33">
-                        <use xlinkXref="#icon-star"></use>
+                        <use xlinkHref="#icon-star"></use>
                       </svg>
                     </label>
 
                     <input className="form__rating-input visually-hidden" name="rating" value="4" id="4-stars" type="radio"/>
                     <label htmlFor="4-stars" className="reviews__rating-label form__rating-label" title="good">
                       <svg className="form__star-image" width="37" height="33">
-                        <use xlinkXref="#icon-star"></use>
+                        <use xlinkHref="#icon-star"></use>
                       </svg>
                     </label>
 
                     <input className="form__rating-input visually-hidden" name="rating" value="3" id="3-stars" type="radio"/>
                     <label htmlFor="3-stars" className="reviews__rating-label form__rating-label" title="not bad">
                       <svg className="form__star-image" width="37" height="33">
-                        <use xlinkXref="#icon-star"></use>
+                        <use xlinkHref="#icon-star"></use>
                       </svg>
                     </label>
 
                     <input className="form__rating-input visually-hidden" name="rating" value="2" id="2-stars" type="radio"/>
                     <label htmlFor="2-stars" className="reviews__rating-label form__rating-label" title="badly">
                       <svg className="form__star-image" width="37" height="33">
-                        <use xlinkXref="#icon-star"></use>
+                        <use xlinkHref="#icon-star"></use>
                       </svg>
                     </label>
 
                     <input className="form__rating-input visually-hidden" name="rating" value="1" id="1-star" type="radio"/>
                     <label htmlFor="1-star" className="reviews__rating-label form__rating-label" title="terribly">
                       <svg className="form__star-image" width="37" height="33">
-                        <use xlinkXref="#icon-star"></use>
+                        <use xlinkHref="#icon-star"></use>
                       </svg>
                     </label>
                   </div>
@@ -210,7 +210,7 @@ const OfferCardDetailed = (props) => {
                     </div>
                     <button className="place-card__bookmark-button place-card__bookmark-button--active button" type="button">
                       <svg className="place-card__bookmark-icon" width="18" height="19">
-                        <use xlinkXref="#icon-bookmark"></use>
+                        <use xlinkHref="#icon-bookmark"></use>
                       </svg>
                       <span className="visually-hidden">In bookmarks</span>
                     </button>
@@ -242,7 +242,7 @@ const OfferCardDetailed = (props) => {
                     </div>
                     <button className="place-card__bookmark-button button" type="button">
                       <svg className="place-card__bookmark-icon" width="18" height="19">
-                        <use xlinkXref="#icon-bookmark"></use>
+                        <use xlinkHref="#icon-bookmark"></use>
                       </svg>
                       <span className="visually-hidden">To bookmarks</span>
                     </button>
@@ -274,7 +274,7 @@ const OfferCardDetailed = (props) => {
                     </div>
                     <button className="place-card__bookmark-button button" type="button">
                       <svg className="place-card__bookmark-icon" width="18" height="19">
-                        <use xlinkXref="#icon-bookmark"></use>
+                        <use xlinkHref="#icon-bookmark"></use>
                       </svg>
                       <span className="visually-hidden">To bookmarks</span>
                     </button>

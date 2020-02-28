@@ -3,9 +3,9 @@ import PropTypes from "prop-types";
 
 const OfferCard = (props) => {
 
-  const {card, onCardHover} = props;
+  const {card, onCardHover, onHeaderClick} = props;
 
-  const {isPremium, isBookmark, price, images, title, type, rating} = card;
+  const {id, isPremium, isBookmark, price, images, title, type, rating} = card;
 
   return (
     <article className="cities__place-card place-card" onMouseOver={onCardHover}>
@@ -40,7 +40,10 @@ const OfferCard = (props) => {
           </div>
         </div>
         <h2 className="place-card__name">
-          <a href="#">
+          <a href="#" onClick={(evt) => {
+            evt.preventDefault();
+            onHeaderClick(id);
+          }}>
             {title}
           </a>
         </h2>
@@ -52,6 +55,7 @@ const OfferCard = (props) => {
 
 OfferCard.propTypes = {
   card: PropTypes.shape({
+    id: PropTypes.number.isRequired,
     isPremium: PropTypes.bool.isRequired,
     isBookmark: PropTypes.bool.isRequired,
     price: PropTypes.number.isRequired,
@@ -60,7 +64,8 @@ OfferCard.propTypes = {
     type: PropTypes.string.isRequired,
     rating: PropTypes.number.isRequired,
   }),
-  onCardHover: PropTypes.func.isRequired
+  onCardHover: PropTypes.func.isRequired,
+  onHeaderClick: PropTypes.func.isRequired
 };
 
 export default OfferCard;
