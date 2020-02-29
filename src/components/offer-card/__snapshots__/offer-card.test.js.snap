@@ -15,7 +15,7 @@ exports[`Render test OfferCard 1`] = `
         alt="Place image"
         className="place-card__image"
         height="200"
-        src="img/apartment-03.jpg"
+        src="img/apartment-02.jpg"
         width="260"
       />
     </a>
@@ -33,7 +33,7 @@ exports[`Render test OfferCard 1`] = `
           className="place-card__price-value"
         >
           €
-          89
+          110
         </b>
         <span
           className="place-card__price-text"
@@ -42,7 +42,7 @@ exports[`Render test OfferCard 1`] = `
         </span>
       </div>
       <button
-        className="place-card__bookmark-button place-card__bookmark-button--active button"
+        className="place-card__bookmark-button false button"
         type="button"
       >
         <svg
@@ -83,11 +83,12 @@ exports[`Render test OfferCard 1`] = `
     </div>
     <h2
       className="place-card__name"
+      onClick={[Function]}
     >
       <a
         href="#"
       >
-        Beautiful apartment at great location
+        Beautiful & luxurious apartment at great location
       </a>
     </h2>
     <p

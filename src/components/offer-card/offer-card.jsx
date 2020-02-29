@@ -39,11 +39,11 @@ const OfferCard = (props) => {
             <span className="visually-hidden">Rating</span>
           </div>
         </div>
-        <h2 className="place-card__name">
-          <a href="#" onClick={(evt) => {
-            evt.preventDefault();
-            onHeaderClick(id);
-          }}>
+        <h2 className="place-card__name" onClick={(evt) => {
+          evt.preventDefault();
+          onHeaderClick(id);
+        }}>
+          <a href="#">
             {title}
           </a>
         </h2>

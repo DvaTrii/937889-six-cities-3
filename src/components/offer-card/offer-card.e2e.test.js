@@ -37,11 +37,9 @@ describe(`OfferCard e2e test`, () => {
         />
     );
 
-    const card = main.find(`.place-card__name`);
-    card.simulate(`click`);
+    const cardHeader = main.find(`.place-card__name`);
+    cardHeader.simulate(`click`, {preventDefault() {}});
 
     expect(clickFn).toHaveBeenCalledTimes(1);
   });
 });
-
-
