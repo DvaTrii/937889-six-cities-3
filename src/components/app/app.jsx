@@ -14,7 +14,7 @@ class App extends PureComponent {
     };
 
     this._renderCards = this._renderCards.bind(this);
-    this._cardHeaderClickHandler = this._cardHeaderClickHandler.bind(this);
+    this._handleCardHeaderClick = this._handleCardHeaderClick.bind(this);
   }
 
   _renderCards() {
@@ -27,7 +27,7 @@ class App extends PureComponent {
           offersCount={offersCount}
           cards={cards}
           onCardHover={onCardHover}
-          onHeaderClick={this._cardHeaderClickHandler}
+          onHeaderClick={this._handleCardHeaderClick}
         />
       );
     } else {
@@ -37,7 +37,7 @@ class App extends PureComponent {
     }
   }
 
-  _cardHeaderClickHandler(id) {
+  _handleCardHeaderClick(id) {
     this.setState({
       cardNumber: id
     });
@@ -52,7 +52,7 @@ class App extends PureComponent {
             {this._renderCards()}
           </Route>
           <Route exact path="/dev-card">
-            <OfferCardDetailed card={this.props.cards[this.state.cardNumber]} onHeaderClick={this._cardHeaderClickHandler}/>
+            <OfferCardDetailed card={this.props.cards[this.state.cardNumber]} onHeaderClick={this._handleCardHeaderClick}/>
           </Route>
         </Switch>
       </BrowserRouter>
