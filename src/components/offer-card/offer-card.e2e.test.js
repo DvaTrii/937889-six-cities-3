@@ -8,18 +8,40 @@ Enzyme.configure({
   adapter: new Adapter(),
 });
 
-it(`Should card hover by mouseover`, () => {
-  const hoverFn = jest.fn();
+describe(`OfferCard e2e test`, () => {
+  it(`Should card hover by mouseover`, () => {
+    const hoverFn = jest.fn();
 
-  const main = shallow(
-      <OfferCard
-        card={testCards.CARDS[0]}
-        onCardHover={hoverFn}
-      />
-  );
+    const main = shallow(
+        <OfferCard
+          card={testCards.CARDS[0]}
+          onCardHover={hoverFn}
+          onHeaderClick={() => {}}
+        />
+    );
 
-  const card = main.find(`.place-card`);
-  card.simulate(`mouseover`);
+    const card = main.find(`.place-card`);
+    card.simulate(`mouseover`);
 
-  expect(hoverFn).toHaveBeenCalledTimes(1);
+    expect(hoverFn).toHaveBeenCalledTimes(1);
+  });
+
+  it(`Should click card header`, () => {
+    const clickFn = jest.fn();
+
+    const main = shallow(
+        <OfferCard
+          card={testCards.CARDS[0]}
+          onCardHover={() => {}}
+          onHeaderClick={clickFn}
+        />
+    );
+
+    const card = main.find(`.place-card__name`);
+    card.simulate(`click`);
+
+    expect(clickFn).toHaveBeenCalledTimes(1);
+  });
 });
+
+

@@ -9,6 +9,7 @@ it(`Render test OfferCard`, () => {
     .create(<OfferCard
       card = {testCards.CARDS[1]}
       onCardHover = {() => {}}
+      onHeaderClick={() => {}}
     />)
     .toJSON();
 

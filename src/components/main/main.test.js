@@ -10,6 +10,7 @@ it(`Render test Main`, () => {
       offersCount={testCards.OFFERS_COUNT}
       cards={testCards.CARDS}
       onCardHover={() => {}}
+      onHeaderClick={() => {}}
     />)
     .toJSON();
 
