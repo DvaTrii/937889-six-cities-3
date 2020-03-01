@@ -41,5 +41,6 @@ describe(`OfferCard e2e test`, () => {
     cardHeader.simulate(`click`, {preventDefault() {}});
 
     expect(clickFn).toHaveBeenCalledTimes(1);
+    expect(clickFn).toHaveBeenCalledWith(testCards.CARDS[0].id);
   });
 });
