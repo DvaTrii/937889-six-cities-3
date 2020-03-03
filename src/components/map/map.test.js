@@ -9,7 +9,7 @@ it(`Render test Map`, () => {
       cards = {testCards.CARDS}
     />, {
       createNodeMock: () => {
-        return {};
+        return document.createElement(`div`);
       }
     })
     .toJSON();
