@@ -30,9 +30,7 @@ class Map extends PureComponent {
       })
       .addTo(map);
 
-    // eslint-disable-next-line react/prop-types
     const offerCords = this.props.cards;
-    // eslint-disable-next-line react/prop-types
     offerCords.forEach((it) => {
       leaflet
         .marker(it.placeCoord, {icon})
