@@ -119,9 +119,7 @@ const Main = (props) => {
               </div>
             </section>
             <div className="cities__right-section">
-              <section className="cities__map map">
-                <Map cards = {cards} />
-              </section>
+              <Map cards = {cards} />
             </div>
           </div>
         </div>

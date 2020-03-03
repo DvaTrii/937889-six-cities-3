@@ -1,10 +1,13 @@
-import React, {PureComponent} from "react";
+import React, {PureComponent, createRef} from "react";
 import leaflet from "leaflet";
+import {CardPropType} from "../prop-validator/prop-validator";
 import PropTypes from "prop-types";
 
 class Map extends PureComponent {
   constructor(props) {
     super(props);
+
+    this._mapRef = createRef();
   }
 
   componentDidMount() {
@@ -16,12 +19,14 @@ class Map extends PureComponent {
     });
 
     const zoom = 12;
-    const map = leaflet.map(`map`, {
+
+    const map = leaflet.map(this._mapRef.current, {
       center: city,
       zoom,
       zoomControl: false,
       marker: true
     });
+
     map.setView(city, zoom);
 
     leaflet
@@ -30,8 +35,7 @@ class Map extends PureComponent {
       })
       .addTo(map);
 
-    const offerCords = this.props.cards;
-    offerCords.forEach((it) => {
+    this.props.cards.forEach((it) => {
       leaflet
         .marker(it.placeCoord, {icon})
         .addTo(map);
@@ -40,13 +44,13 @@ class Map extends PureComponent {
 
   render() {
     return (
-      <div id="map"></div>
+      <section ref={this._mapRef} className="cities__map map" />
     );
   }
 }
 
-Map.protoTypes = {
-  cards: PropTypes.array.isRequired,
+Map.propTypes = {
+  cards: PropTypes.arrayOf(CardPropType).isRequired,
 };
 
 export default Map;

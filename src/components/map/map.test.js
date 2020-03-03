@@ -12,5 +12,3 @@ it(`Render test Map`, () => {
 
   expect(tree).toMatchSnapshot();
 });
-
-
