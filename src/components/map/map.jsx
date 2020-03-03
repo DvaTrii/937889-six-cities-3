@@ -1,7 +1,8 @@
 import React, {PureComponent} from "react";
 import leaflet from "leaflet";
+import PropTypes from "prop-types";
 
-export default class Map extends PureComponent {
+class Map extends PureComponent {
   constructor(props) {
     super(props);
   }
@@ -29,10 +30,12 @@ export default class Map extends PureComponent {
       })
       .addTo(map);
 
-    const offerCords = this.props.cards.placeCoord;
+    // eslint-disable-next-line react/prop-types
+    const offerCords = this.props.cards;
+    // eslint-disable-next-line react/prop-types
     offerCords.forEach((it) => {
       leaflet
-        .marker(it, {icon})
+        .marker(it.placeCoord, {icon})
         .addTo(map);
     });
   }
@@ -43,3 +46,9 @@ export default class Map extends PureComponent {
     );
   }
 }
+
+Map.protoTypes = {
+  cards: PropTypes.array.isRequired,
+};
+
+export default Map;

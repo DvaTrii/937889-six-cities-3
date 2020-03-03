@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 // import {CardPropType} from "../prop-validator/prop-validator";
 
 import OffersList from "../offers-list/offers-list.jsx";
+import Map from "../map/map.jsx";
 
 const Main = (props) => {
   const {offersCount, cards, onCardHover, onHeaderClick} = props;
@@ -118,7 +119,9 @@ const Main = (props) => {
               </div>
             </section>
             <div className="cities__right-section">
-              <section className="cities__map map"></section>
+              <section className="cities__map map">
+                <Map cards = {cards} />
+              </section>
             </div>
           </div>
         </div>
