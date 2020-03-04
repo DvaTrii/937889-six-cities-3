@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import {CardPropType} from "../prop-validator/prop-validator";
 
 const Review = (props) => {
 
@@ -34,14 +35,7 @@ const Review = (props) => {
 };
 
 Review.propTypes = {
-  review: PropTypes.shape({
-    img: PropTypes.string.isRequired,
-    userName: PropTypes.string.isRequired,
-    rating: PropTypes.number.isRequired,
-    reviewText: PropTypes.string.isRequired,
-    fullDate: PropTypes.string.isRequired,
-    date: PropTypes.string.isRequired,
-  })
+  review: PropTypes.oneOf(CardPropType.reviews).isRequired,
 };
 
 export default Review;

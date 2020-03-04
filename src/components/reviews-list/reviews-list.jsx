@@ -1,6 +1,6 @@
 import React from "react";
-import PropTypes from "prop-types";
 import Review from "../review/review.jsx";
+import {CardPropType} from "../prop-validator/prop-validator";
 
 const ReviewsList = (props) => {
 
@@ -21,8 +21,6 @@ const ReviewsList = (props) => {
   );
 };
 
-ReviewsList.propTypes = {
-  reviews: PropTypes.array.isRequired,
-};
+ReviewsList.propTypes = CardPropType.reviews.isRequired;
 
 export default ReviewsList;

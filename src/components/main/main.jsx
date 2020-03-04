@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 
 import OffersList from "../offers-list/offers-list.jsx";
 import Map from "../map/map.jsx";
+import {CardPropType} from "../prop-validator/prop-validator";
 
 const Main = (props) => {
   const {offersCount, cards, onCardHover, onHeaderClick} = props;
@@ -130,7 +131,7 @@ const Main = (props) => {
 
 Main.propTypes = {
   offersCount: PropTypes.number.isRequired,
-  cards: PropTypes.array.isRequired,
+  cards: PropTypes.arrayOf(CardPropType).isRequired,
   onCardHover: PropTypes.func.isRequired,
   onHeaderClick: PropTypes.func.isRequired,
 };

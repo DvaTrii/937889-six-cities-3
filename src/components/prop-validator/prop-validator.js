@@ -19,4 +19,12 @@ export const CardPropType = shape({
     photo: string.isRequired,
     isSuper: bool.isRequired,
   }).isRequired,
+  reviews: arrayOf(shape({
+    img: string.isRequired,
+    userName: string.isRequired,
+    rating: number.isRequired,
+    reviewText: string.isRequired,
+    fullDate: string.isRequired,
+    date: string.isRequired,
+  })),
 }).isRequired;

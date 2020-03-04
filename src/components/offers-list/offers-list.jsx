@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import {CardPropType} from "../prop-validator/prop-validator";
 
 import OfferCard from "../offer-card/offer-card.jsx";
 
@@ -10,7 +11,7 @@ const OffersList = (props) => {
 };
 
 OffersList.propTypes = {
-  cards: PropTypes.array.isRequired,
+  cards: PropTypes.arrayOf(CardPropType).isRequired,
   onCardHover: PropTypes.func.isRequired,
   onHeaderClick: PropTypes.func.isRequired,
 };

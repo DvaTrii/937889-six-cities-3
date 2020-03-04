@@ -1,6 +1,6 @@
 import React from "react";
-import PropTypes from "prop-types";
 import ReviewsList from "../reviews-list/reviews-list";
+import {CardPropType} from "../prop-validator/prop-validator";
 
 const OfferCardDetailed = (props) => {
 
@@ -276,26 +276,6 @@ const OfferCardDetailed = (props) => {
   );
 };
 
-OfferCardDetailed.propTypes = {
-  card: PropTypes.shape({
-    isPremium: PropTypes.bool.isRequired,
-    isBookmark: PropTypes.bool.isRequired,
-    price: PropTypes.number.isRequired,
-    images: PropTypes.array.isRequired,
-    title: PropTypes.string.isRequired,
-    type: PropTypes.string.isRequired,
-    rating: PropTypes.number.isRequired,
-    description: PropTypes.string.isRequired,
-    facilities: PropTypes.array.isRequired,
-    bedroomsAmount: PropTypes.number.isRequired,
-    maxGuestsAmount: PropTypes.number.isRequired,
-    hostInfo: PropTypes.shape({
-      name: PropTypes.string.isRequired,
-      photo: PropTypes.string.isRequired,
-      isSuper: PropTypes.bool.isRequired
-    }),
-    reviews: PropTypes.array.isRequired,
-  }),
-};
+OfferCardDetailed.propTypes = CardPropType.isRequired;
 
 export default OfferCardDetailed;
