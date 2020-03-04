@@ -21,6 +21,6 @@ const ReviewsList = (props) => {
   );
 };
 
-ReviewsList.propTypes = CardPropType.reviews.isRequired;
+ReviewsList.propTypes = CardPropType.reviews;
 
 export default ReviewsList;

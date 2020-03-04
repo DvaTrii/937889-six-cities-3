@@ -1,6 +1,6 @@
 import React from "react";
-import ReviewsList from "../reviews-list/reviews-list";
-import {CardPropType} from "../prop-validator/prop-validator";
+import ReviewsList from "../reviews-list/reviews-list.jsx";
+import {CardPropType} from "../prop-validator/prop-validator.js";
 
 const OfferCardDetailed = (props) => {
 
@@ -276,6 +276,6 @@ const OfferCardDetailed = (props) => {
   );
 };
 
-OfferCardDetailed.propTypes = CardPropType.isRequired;
+OfferCardDetailed.propTypes = CardPropType;
 
 export default OfferCardDetailed;
