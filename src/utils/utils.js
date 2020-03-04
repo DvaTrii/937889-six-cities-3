@@ -19,6 +19,24 @@ export const testCards = {
         photo: `img/avatar-angelina.jpg`,
         isSuper: true,
       },
+      reviews: [
+        {
+          img: `img/avatar-angelina.jpg`,
+          userName: `Angelina`,
+          rating: 3,
+          reviewText: `Review1Review1Review1Review1Review1`,
+          fullDate: `2019-03-12`,
+          date: `March 2019`,
+        },
+        {
+          img: `img/avatar-max.jpg`,
+          userName: `Max`,
+          rating: 4,
+          reviewText: `Review2Review2Review2Review2Review2`,
+          fullDate: `2020-02-12`,
+          date: `February 2020`,
+        },
+      ]
     },
     {
       id: 1,
@@ -38,6 +56,24 @@ export const testCards = {
         photo: `img/avatar-angelina.jpg`,
         isSuper: true,
       },
+      reviews: [
+        {
+          img: `img/avatar-angelina.jpg`,
+          userName: `Angelina`,
+          rating: 3,
+          reviewText: `Review1Review1Review1Review1Review1`,
+          fullDate: `2019-03-12`,
+          date: `March 2019`,
+        },
+        {
+          img: `img/avatar-max.jpg`,
+          userName: `Max`,
+          rating: 4,
+          reviewText: `Review2Review2Review2Review2Review2`,
+          fullDate: `2020-02-12`,
+          date: `February 2020`,
+        },
+      ]
     },
   ]
 };
