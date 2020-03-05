@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import {CardPropType} from "../prop-validator/prop-validator";
 
 const Review = (props) => {
@@ -34,8 +33,6 @@ const Review = (props) => {
   );
 };
 
-Review.propTypes = {
-  review: PropTypes.oneOf(CardPropType.reviews).isRequired,
-};
+Review.propTypes = CardPropType.reviews;
 
 export default Review;

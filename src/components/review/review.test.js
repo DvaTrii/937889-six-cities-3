@@ -1,13 +1,13 @@
 import React from "react";
 import renderer from "react-test-renderer";
 import {testCards} from "../../utils/utils.js";
-import ReviewsList from "./reviews-list.jsx";
+import Review from "./review.jsx";
 
 
-it(`Render test ReviewsList`, () => {
+it(`Render test Review`, () => {
   const tree = renderer
-    .create(<ReviewsList
-      reviews = {testCards.CARDS[1].reviews}
+    .create(<Review
+      review = {testCards.CARDS[1].reviews[0]}
     />)
     .toJSON();
 

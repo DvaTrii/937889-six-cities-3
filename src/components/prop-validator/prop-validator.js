@@ -26,5 +26,5 @@ export const CardPropType = shape({
     reviewText: string.isRequired,
     fullDate: string.isRequired,
     date: string.isRequired,
-  })),
+  }).isRequired),
 }).isRequired;

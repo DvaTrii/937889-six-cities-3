@@ -1,5 +1,3 @@
-import {number, string} from "prop-types/prop-types";
-
 export default [
   {
     id: 0,
@@ -154,4 +152,3 @@ export default [
     ]
   }
 ];
-
