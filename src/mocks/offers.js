@@ -35,7 +35,12 @@ export default [
         fullDate: `2020-02-12`,
         date: `February 2020`,
       },
-    ]
+    ],
+    nearPlaces: [
+      {id: 1},
+      {id: 2},
+      {id: 3},
+    ],
   },
   {
     id: 1,
@@ -73,7 +78,12 @@ export default [
         fullDate: `2020-02-12`,
         date: `February 2020`,
       },
-    ]
+    ],
+    nearPlaces: [
+      {id: 0},
+      {id: 2},
+      {id: 3},
+    ],
   },
   {
     id: 2,
@@ -111,7 +121,12 @@ export default [
         fullDate: `2020-02-12`,
         date: `February 2020`,
       },
-    ]
+    ],
+    nearPlaces: [
+      {id: 0},
+      {id: 1},
+      {id: 3},
+    ],
   },
   {
     id: 3,
@@ -149,6 +164,11 @@ export default [
         fullDate: `2020-02-12`,
         date: `February 2020`,
       },
-    ]
+    ],
+    nearPlaces: [
+      {id: 0},
+      {id: 1},
+      {id: 2},
+    ],
   }
 ];

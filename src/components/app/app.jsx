@@ -4,7 +4,6 @@ import PropTypes from "prop-types";
 import Main from "../main/main.jsx";
 import OfferCardDetailed from "../offer-card-detailed/offer-card-detailed.jsx";
 import {CardPropType} from "../prop-validator/prop-validator";
-// import {CardPropType} from "../prop-validator/prop-validator";
 
 class App extends PureComponent {
   constructor(props) {
@@ -52,7 +51,7 @@ class App extends PureComponent {
           <Route exact path="/">
             {this._renderCards()}
           </Route>
-          <Route exact path="/dev-card">
+          <Route exact path="/offer">
             <OfferCardDetailed card={this.props.cards[this.state.cardNumber]} onHeaderClick={this._handleCardHeaderClick}/>
           </Route>
         </Switch>
