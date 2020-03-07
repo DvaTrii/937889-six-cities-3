@@ -44,7 +44,7 @@ class Map extends PureComponent {
 
   render() {
     return (
-      <section ref={this._mapRef} className="cities__map map">
+      <section ref={this._mapRef} className={`${this.props.isNearOfferMap ? `property__map` : `cities__map`} map`}>
       </section>
     );
   }
@@ -52,6 +52,7 @@ class Map extends PureComponent {
 
 Map.propTypes = {
   cards: PropTypes.arrayOf(CardPropType).isRequired,
+  isNearOfferMap: PropTypes.bool.isRequired,
 };
 
 export default Map;

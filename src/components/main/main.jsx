@@ -120,7 +120,7 @@ const Main = (props) => {
               </div>
             </section>
             <div className="cities__right-section">
-              <Map cards = {cards} />
+              <Map cards = {cards} isNearOfferMap={false}/>
             </div>
           </div>
         </div>

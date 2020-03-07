@@ -1,12 +1,14 @@
 import React from "react";
 import ReviewsList from "../reviews-list/reviews-list.jsx";
 import {CardPropType} from "../prop-validator/prop-validator.js";
+import Map from "../map/map.jsx";
+import propertiesNearby from "../../mocks/offers.js";
 
 const OfferCardDetailed = (props) => {
 
   const {card} = props;
 
-  const {isPremium, isBookmark, price, images, title, type, rating, description, facilities, bedroomsAmount, maxGuestsAmount, hostInfo, reviews} = card;
+  const {isPremium, isBookmark, price, images, title, type, rating, description, facilities, bedroomsAmount, maxGuestsAmount, hostInfo, reviews, nearPlaces} = card;
 
   const {name, photo, isSuper} = hostInfo;
 
@@ -21,6 +23,10 @@ const OfferCardDetailed = (props) => {
       {item}
     </li>
   ));
+
+  const nearPlacesId = nearPlaces.map((it) => it.id);
+
+  const nearOffers = propertiesNearby.filter((it) => nearPlacesId.includes(it.id));
 
   return (
     <div className="page">
@@ -167,7 +173,7 @@ const OfferCardDetailed = (props) => {
               </section>
             </div>
           </div>
-          <section className="property__map map"></section>
+          <Map cards={nearOffers} isNearOfferMap={true}/>
         </section>
         <div className="container">
           <section className="near-places places">
