@@ -4,18 +4,18 @@ import {CardPropType} from "../prop-validator/prop-validator";
 
 const OfferCard = (props) => {
 
-  const {card, onCardHover, onHeaderClick} = props;
+  const {card, onCardHover, onHeaderClick, isOfferDetailed} = props;
 
   const {id, isPremium, isBookmark, price, images, title, type, rating} = card;
 
   return (
-    <article className="cities__place-card place-card" onMouseOver={onCardHover}>
+    <article className={`${isOfferDetailed ? `near-places__card` : `cities__place-card`} place-card`} onMouseOver={onCardHover}>
       {isPremium && (
         <div className="place-card__mark">
           <span>Premium</span>
         </div>
       )}
-      <div className="cities__image-wrapper place-card__image-wrapper">
+      <div className={`${isOfferDetailed ? `near-places__image-wrapper` : `cities__image-wrapper`} place-card__image-wrapper`}>
         <a href="#">
           <img className="place-card__image" src={images[0]} width="260" height="200" alt="Place image"/>
         </a>
@@ -57,7 +57,8 @@ const OfferCard = (props) => {
 OfferCard.propTypes = {
   card: CardPropType,
   onCardHover: PropTypes.func.isRequired,
-  onHeaderClick: PropTypes.func.isRequired
+  onHeaderClick: PropTypes.func.isRequired,
+  isOfferDetailed: PropTypes.bool.isRequired,
 };
 
 export default OfferCard;
