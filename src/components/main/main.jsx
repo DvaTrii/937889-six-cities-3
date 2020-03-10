@@ -1,10 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
-// import {CardPropType} from "../prop-validator/prop-validator";
+import {CardPropType} from "../prop-validator/prop-validator";
 
 import OffersList from "../offers-list/offers-list.jsx";
 import Map from "../map/map.jsx";
-import {CardPropType} from "../prop-validator/prop-validator";
 
 const Main = (props) => {
   const {offersCount, cards, onCardHover, onHeaderClick} = props;
@@ -120,7 +119,7 @@ const Main = (props) => {
               </div>
             </section>
             <div className="cities__right-section">
-              <Map cards = {cards} isNearOfferMap={false}/>
+              <Map cards = {cards} isCardDetailed={false}/>
             </div>
           </div>
         </div>
@@ -134,6 +133,7 @@ Main.propTypes = {
   cards: PropTypes.arrayOf(CardPropType).isRequired,
   onCardHover: PropTypes.func.isRequired,
   onHeaderClick: PropTypes.func.isRequired,
+  isCardDetailed: PropTypes.bool.isRequired,
 };
 
 export default Main;

@@ -173,7 +173,7 @@ const OfferCardDetailed = (props) => {
               </section>
             </div>
           </div>
-          <Map cards={nearOffers} isNearOfferMap={true}/>
+          <Map cards={nearOffers} isCardDetailed={true}/>
         </section>
         <div className="container">
           <section className="near-places places">
