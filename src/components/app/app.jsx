@@ -28,11 +28,17 @@ class App extends PureComponent {
           cards={cards}
           onCardHover={onCardHover}
           onHeaderClick={this._handleCardHeaderClick}
+          isOfferDetailed={false}
         />
       );
     } else {
       return (
-        <OfferCardDetailed card={cards[cardNumber]}/>
+        <OfferCardDetailed
+          card={cards[cardNumber]}
+          onHeaderClick={this._handleCardHeaderClick}
+          onCardHover={onCardHover}
+          isOfferDetailed={true}
+        />
       );
     }
   }
@@ -52,7 +58,9 @@ class App extends PureComponent {
             {this._renderCards()}
           </Route>
           <Route exact path="/offer">
-            <OfferCardDetailed card={this.props.cards[this.state.cardNumber]} onHeaderClick={this._handleCardHeaderClick}/>
+            <OfferCardDetailed
+              card={this.props.cards[this.state.cardNumber]}
+              onHeaderClick={this._handleCardHeaderClick}/>
           </Route>
         </Switch>
       </BrowserRouter>
@@ -64,6 +72,7 @@ App.propTypes = {
   offersCount: PropTypes.number.isRequired,
   cards: PropTypes.arrayOf(CardPropType).isRequired,
   onCardHover: PropTypes.func.isRequired,
+  card: CardPropType
 };
 
 export default App;

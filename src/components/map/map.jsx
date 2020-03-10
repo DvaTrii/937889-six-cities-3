@@ -44,7 +44,7 @@ class Map extends PureComponent {
 
   render() {
     return (
-      <section ref={this._mapRef} className={`${this.props.isCardDetailed ? `property__map` : `cities__map`} map`}>
+      <section ref={this._mapRef} className={`${this.props.isOfferDetailed ? `property__map` : `cities__map`} map`}>
       </section>
     );
   }
@@ -52,7 +52,7 @@ class Map extends PureComponent {
 
 Map.propTypes = {
   cards: PropTypes.arrayOf(CardPropType).isRequired,
-  isCardDetailed: PropTypes.bool.isRequired,
+  isOfferDetailed: PropTypes.bool.isRequired,
 };
 
 export default Map;
