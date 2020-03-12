@@ -7,6 +7,7 @@ it(`Render test Map`, () => {
   const tree = renderer
     .create(<Map
       cards = {testCards.CARDS}
+      isOfferDetailed={false}
     />, {
       createNodeMock: () => {
         return document.createElement(`div`);

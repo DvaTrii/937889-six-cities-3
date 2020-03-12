@@ -432,7 +432,6 @@ exports[`Render test Main 1`] = `
         >
           <section
             className="cities__map map"
-            id="map"
           />
         </div>
       </div>

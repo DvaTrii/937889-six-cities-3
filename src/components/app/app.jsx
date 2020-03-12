@@ -54,13 +54,13 @@ class App extends PureComponent {
     return (
       <BrowserRouter>
         <Switch>
-          <Route exact path="/">
-            {this._renderCards()}
+          <Route exact path="/" render={() => this._renderCards()}>
           </Route>
-          <Route exact path="/offer">
+          <Route exact path="/offer" render={(_routeProps) => (
             <OfferCardDetailed
-              card={this.props.cards[this.state.cardNumber]}
+              card={this.props.cards[0]}
               onHeaderClick={this._handleCardHeaderClick}/>
+          )}>
           </Route>
         </Switch>
       </BrowserRouter>
@@ -72,7 +72,6 @@ App.propTypes = {
   offersCount: PropTypes.number.isRequired,
   cards: PropTypes.arrayOf(CardPropType).isRequired,
   onCardHover: PropTypes.func.isRequired,
-  card: CardPropType
 };
 
 export default App;

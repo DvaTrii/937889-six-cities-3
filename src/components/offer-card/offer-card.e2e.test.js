@@ -34,6 +34,7 @@ describe(`OfferCard e2e test`, () => {
           card={testCards.CARDS[0]}
           onCardHover={() => {}}
           onHeaderClick={clickFn}
+          isOfferDetailed={false}
         />
     );
 

@@ -10,6 +10,7 @@ it(`Render test Offerslist`, () => {
       cards = {testCards.CARDS}
       onCardHover = {() => {}}
       onHeaderClick={() => {}}
+      isOfferDetailed={false}
     />)
     .toJSON();
 

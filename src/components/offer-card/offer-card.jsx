@@ -54,8 +54,12 @@ const OfferCard = (props) => {
   );
 };
 
+OfferCard.defaultProps = {
+  isOfferDetailed: false
+};
+
 OfferCard.propTypes = {
-  card: CardPropType,
+  card: CardPropType.isRequired,
   onCardHover: PropTypes.func.isRequired,
   onHeaderClick: PropTypes.func.isRequired,
   isOfferDetailed: PropTypes.bool.isRequired,

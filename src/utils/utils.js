@@ -29,7 +29,10 @@ export const testCards = {
           fullDate: `2020-02-12`,
           date: `February 2020`,
         },
-      ]
+      ],
+      nearPlaces: [
+        {id: 1},
+      ],
     },
     {
       id: 1,
@@ -67,7 +70,10 @@ export const testCards = {
           fullDate: `2019-03-12`,
           date: `March 2019`,
         },
-      ]
+      ],
+      nearPlaces: [
+        {id: 0},
+      ],
     },
   ]
 };

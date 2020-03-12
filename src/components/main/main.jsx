@@ -6,13 +6,13 @@ import OffersList from "../offers-list/offers-list.jsx";
 import Map from "../map/map.jsx";
 
 const Main = (props) => {
-  const {offersCount, cards, onCardHover, onHeaderClick, isOfferDetailed} = props;
+  const {offersCount, cards, onCardHover, onHeaderClick} = props;
 
   const renderCards = () => <OffersList
     cards = {cards}
     onCardHover = {onCardHover}
     onHeaderClick = {onHeaderClick}
-    isOfferDetailed={isOfferDetailed}/>;
+    isOfferDetailed={false}/>;
 
   return (
     <div className="page page--gray page--main">
@@ -137,7 +137,6 @@ Main.propTypes = {
   cards: PropTypes.arrayOf(CardPropType).isRequired,
   onCardHover: PropTypes.func.isRequired,
   onHeaderClick: PropTypes.func.isRequired,
-  isOfferDetailed: PropTypes.bool.isRequired
 };
 
 export default Main;

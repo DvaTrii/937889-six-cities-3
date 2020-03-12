@@ -8,7 +8,7 @@ import PropTypes from "prop-types";
 
 const OfferCardDetailed = (props) => {
 
-  const {card, isOfferDetailed, onCardHover, onHeaderClick} = props;
+  const {card, onCardHover, onHeaderClick} = props;
 
   const {isPremium, isBookmark, price, images, title, type, rating, description, facilities, bedroomsAmount, maxGuestsAmount, hostInfo, reviews, nearPlaces} = card;
 
@@ -175,13 +175,13 @@ const OfferCardDetailed = (props) => {
               </section>
             </div>
           </div>
-          <Map cards={nearOffers} isOfferDetailed={isOfferDetailed}/>
+          <Map cards={nearOffers} isOfferDetailed/>
         </section>
         <div className="container">
           <section className="near-places places">
             <h2 className="near-places__title">Other places in the neighbourhood</h2>
             <div className="near-places__list places__list">
-              <OffersList cards = {nearOffers} isOfferDetailed={isOfferDetailed} onHeaderClick={onHeaderClick} onCardHover={onCardHover}/>
+              <OffersList cards = {nearOffers} isOfferDetailed onHeaderClick={onHeaderClick} onCardHover={onCardHover}/>
             </div>
           </section>
         </div>
@@ -191,10 +191,9 @@ const OfferCardDetailed = (props) => {
 };
 
 OfferCardDetailed.propTypes = {
-  card: CardPropType,
+  card: CardPropType.isRequired,
   onCardHover: PropTypes.func.isRequired,
   onHeaderClick: PropTypes.func.isRequired,
-  isOfferDetailed: PropTypes.bool.isRequired
 };
 
 export default OfferCardDetailed;

@@ -27,4 +27,4 @@ export const CardPropType = shape({
     fullDate: string.isRequired,
     date: string.isRequired,
   }).isRequired),
-}).isRequired;
+});
