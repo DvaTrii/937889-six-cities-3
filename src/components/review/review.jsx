@@ -1,11 +1,12 @@
 import React from "react";
-import {CardPropType} from "../prop-validator/prop-validator";
+import {ReviewPropType} from "../prop-validator/prop-validator";
+import {customDate, formatDate} from "../../utils/utils.js";
 
 const Review = (props) => {
 
   const {review} = props;
 
-  const {img, userName, rating, reviewText, fullDate, date} = review;
+  const {img, userName, rating, reviewText, date} = review;
 
   return (
     <li className="reviews__item">
@@ -27,12 +28,12 @@ const Review = (props) => {
         <p className="reviews__text">
           {reviewText}
         </p>
-        <time className="reviews__time" dateTime={fullDate}>{date}</time>
+        <time className="reviews__time" dateTime={formatDate(date)}>{customDate(date)}</time>
       </div>
     </li>
   );
 };
 
-Review.propTypes = CardPropType.reviews;
+Review.propTypes = ReviewPropType;
 
 export default Review;

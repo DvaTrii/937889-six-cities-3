@@ -1,3 +1,5 @@
+import moment from "moment";
+
 export const testCards = {
   OFFERS_COUNT: 13,
   CARDS: [
@@ -26,8 +28,7 @@ export const testCards = {
           userName: `Max`,
           rating: 4,
           reviewText: `Review2Review2Review2Review2Review2`,
-          fullDate: `2020-02-12`,
-          date: `February 2020`,
+          date: 1584078707177,
         },
       ],
       nearPlaces: [
@@ -59,16 +60,14 @@ export const testCards = {
           userName: `Angelina`,
           rating: 3,
           reviewText: `Review1Review1Review1Review1Review1`,
-          fullDate: `2019-03-12`,
-          date: `March 2019`,
+          date: 1584078707177,
         },
         {
           img: `img/avatar-angelina.jpg`,
           userName: `Ben`,
           rating: 3,
           reviewText: `Review3Review3Review3Review3Review3`,
-          fullDate: `2019-03-12`,
-          date: `March 2019`,
+          date: 1584078707177,
         },
       ],
       nearPlaces: [
@@ -77,3 +76,12 @@ export const testCards = {
     },
   ]
 };
+// for attribute
+export const formatDate = (data) => {
+  return moment(data).format(`YYYY-MM-DD`);
+};
+// for markup
+export const customDate = (data) => {
+  return moment(data).format(`MMMM YYYY`);
+};
+

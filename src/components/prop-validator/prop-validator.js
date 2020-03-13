@@ -1,4 +1,4 @@
-import {shape, string, number, bool, arrayOf} from "prop-types/prop-types";
+import {shape, string, number, bool, arrayOf, array} from "prop-types/prop-types";
 
 export const CardPropType = shape({
   id: number.isRequired,
@@ -19,12 +19,13 @@ export const CardPropType = shape({
     photo: string.isRequired,
     isSuper: bool.isRequired,
   }).isRequired,
-  reviews: arrayOf(shape({
-    img: string.isRequired,
-    userName: string.isRequired,
-    rating: number.isRequired,
-    reviewText: string.isRequired,
-    fullDate: string.isRequired,
-    date: string.isRequired,
-  }).isRequired),
+  reviews: array.isRequired,
 });
+
+export const ReviewPropType = shape({
+  img: string.isRequired,
+  userName: string.isRequired,
+  rating: number.isRequired,
+  reviewText: string.isRequired,
+  date: number.isRequired,
+}).isRequired;
