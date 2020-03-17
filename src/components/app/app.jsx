@@ -3,7 +3,7 @@ import {Switch, Route, BrowserRouter} from "react-router-dom";
 import PropTypes from "prop-types";
 import Main from "../main/main.jsx";
 import OfferCardDetailed from "../offer-card-detailed/offer-card-detailed.jsx";
-import {CardPropType} from "../prop-validator/prop-validator";
+import {CardPropType, CitiesPropType} from "../prop-validator/prop-validator";
 
 class App extends PureComponent {
   constructor(props) {
@@ -18,12 +18,13 @@ class App extends PureComponent {
   }
 
   _renderCards() {
-    const {offersCount, cards, onCardHover} = this.props;
+    const {cities, offersCount, cards, onCardHover} = this.props;
     const {cardNumber} = this.state;
 
     if (cardNumber === -1 || cardNumber >= cards.length) {
       return (
         <Main
+          cities={cities}
           offersCount={offersCount}
           cards={cards}
           onCardHover={onCardHover}
@@ -69,6 +70,7 @@ class App extends PureComponent {
 }
 
 App.propTypes = {
+  cities: PropTypes.arrayOf(CitiesPropType),
   offersCount: PropTypes.number.isRequired,
   cards: PropTypes.arrayOf(CardPropType).isRequired,
   onCardHover: PropTypes.func.isRequired,

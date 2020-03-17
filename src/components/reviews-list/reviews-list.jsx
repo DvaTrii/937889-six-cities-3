@@ -7,16 +7,11 @@ const ReviewsList = (props) => {
 
   const {reviews} = props;
 
-  const renderReviews = () => {
-
-    return (reviews.map((review, index) => <Review review = {review} key ={index}/>));
-  };
-
   return (
     <React.Fragment>
       <h2 className="reviews__title">Reviews &middot; <span className="reviews__amount">{reviews.length}</span></h2>
       <ul className="reviews__list">
-        {renderReviews()}
+        {reviews.map((review, index) => <Review review = {review} key ={index}/>)}
       </ul>
     </React.Fragment>
   );

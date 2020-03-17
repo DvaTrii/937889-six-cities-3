@@ -1,12 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
-import {CardPropType} from "../prop-validator/prop-validator";
+import {CardPropType, CitiesPropType} from "../prop-validator/prop-validator";
 import Header from "../header/header.jsx";
 import OffersList from "../offers-list/offers-list.jsx";
 import Map from "../map/map.jsx";
+import CitiesList from "../cities-list/cities-list.jsx";
 
 const Main = (props) => {
-  const {offersCount, cards, onCardHover, onHeaderClick} = props;
+  const {cities, offersCount, cards, onCardHover, onHeaderClick} = props;
 
   return (
     <div className="page page--gray page--main">
@@ -15,38 +16,7 @@ const Main = (props) => {
         <h1 className="visually-hidden">Cities</h1>
         <div className="tabs">
           <section className="locations container">
-            <ul className="locations__list tabs__list">
-              <li className="locations__item">
-                <a className="locations__item-link tabs__item" href="#">
-                  <span>Paris</span>
-                </a>
-              </li>
-              <li className="locations__item">
-                <a className="locations__item-link tabs__item" href="#">
-                  <span>Cologne</span>
-                </a>
-              </li>
-              <li className="locations__item">
-                <a className="locations__item-link tabs__item" href="#">
-                  <span>Brussels</span>
-                </a>
-              </li>
-              <li className="locations__item">
-                <a className="locations__item-link tabs__item tabs__item--active">
-                  <span>Amsterdam</span>
-                </a>
-              </li>
-              <li className="locations__item">
-                <a className="locations__item-link tabs__item" href="#">
-                  <span>Hamburg</span>
-                </a>
-              </li>
-              <li className="locations__item">
-                <a className="locations__item-link tabs__item" href="#">
-                  <span>Dusseldorf</span>
-                </a>
-              </li>
-            </ul>
+            <CitiesList cities={cities} />
           </section>
         </div>
         <div className="cities">
@@ -99,6 +69,7 @@ const Main = (props) => {
 };
 
 Main.propTypes = {
+  cities: PropTypes.arrayOf(CitiesPropType),
   offersCount: PropTypes.number.isRequired,
   cards: PropTypes.arrayOf(CardPropType).isRequired,
   onCardHover: PropTypes.func.isRequired,

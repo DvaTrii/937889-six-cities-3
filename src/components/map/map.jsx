@@ -8,6 +8,7 @@ class Map extends PureComponent {
     super(props);
 
     this._mapRef = createRef();
+    this.mapInst = null;
   }
 
   componentDidMount() {
@@ -20,25 +21,25 @@ class Map extends PureComponent {
 
     const zoom = 12;
 
-    const mapInst = leaflet.map(this._mapRef.current, {
+    this.mapInst = leaflet.map(this._mapRef.current, {
       center: city,
       zoom,
       zoomControl: false,
       marker: true
     });
 
-    mapInst.setView(city, zoom);
+    this.mapInst.setView(city, zoom);
 
     leaflet
       .tileLayer(`https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png`, {
         attribution: `&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>`
       })
-      .addTo(mapInst);
+      .addTo(this.mapInst);
 
     this.props.cards.forEach((it) => {
       leaflet
         .marker(it.placeCoord, {icon})
-        .addTo(mapInst);
+        .addTo(this.mapInst);
     });
   }
 
