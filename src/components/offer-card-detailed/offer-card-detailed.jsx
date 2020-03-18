@@ -70,7 +70,7 @@ const OfferCardDetailed = (props) => {
           <div className="property__container container">
             <div className="property__wrapper">
               {isPremium && (
-                <div className="place-card__mark">
+                <div className="property__mark">
                   <span>Premium</span>
                 </div>
               )}
