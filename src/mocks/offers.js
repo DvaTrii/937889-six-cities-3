@@ -1,6 +1,7 @@
 export default [
   {
     id: 0,
+    city: `Amsterdam`,
     isPremium: true,
     isBookmark: true,
     placeCoord: [52.369553943508, 4.85309666406198],
@@ -42,6 +43,7 @@ export default [
   },
   {
     id: 1,
+    city: `Amsterdam`,
     isPremium: false,
     isBookmark: false,
     placeCoord: [52.3909553943508, 4.85309666406198],
@@ -83,6 +85,7 @@ export default [
   },
   {
     id: 2,
+    city: `Milan`,
     isPremium: true,
     isBookmark: false,
     placeCoord: [52.3909553943508, 4.929309666406198],
@@ -124,6 +127,7 @@ export default [
   },
   {
     id: 3,
+    city: `Lisbon`,
     isPremium: false,
     isBookmark: true,
     placeCoord: [52.3809553943508, 4.939309666406198],

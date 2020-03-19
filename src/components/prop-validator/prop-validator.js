@@ -2,6 +2,7 @@ import {shape, string, number, bool, arrayOf, array} from "prop-types/prop-types
 
 export const CardPropType = shape({
   id: number.isRequired,
+  city: string.isRequired,
   isPremium: bool.isRequired,
   isBookmark: bool.isRequired,
   placeCoord: arrayOf(number.isRequired),
