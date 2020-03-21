@@ -5,6 +5,7 @@ export const testCards = {
   CARDS: [
     {
       id: 0,
+      city: `Amsterdam`,
       isPremium: true,
       isBookmark: true,
       placeCoord: [52.369553943508, 4.85309666406198],
@@ -37,6 +38,7 @@ export const testCards = {
     },
     {
       id: 1,
+      city: `Amsterdam`,
       isPremium: false,
       isBookmark: false,
       placeCoord: [52.369553943510, 4.85309666406200],
@@ -85,3 +87,6 @@ export const customDate = (data) => {
   return moment(data).format(`MMMM YYYY`);
 };
 
+export const extend = (a, b) => {
+  return Object.assign({}, a, b);
+};
