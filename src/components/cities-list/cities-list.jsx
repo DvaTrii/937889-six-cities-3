@@ -1,15 +1,18 @@
 import React from "react";
 import PropTypes from "prop-types";
-import {CitiesPropType} from "../prop-validator/prop-validator.js";
 
 const CitiesList = (props) => {
-  const {cities} = props;
+  const {cities, currentCity, onCityChange} = props;
   return <ul className="locations__list tabs__list">
-    {cities.map((el, i) => <li key={i + el.city} className="locations__item">
+    {Array.from(cities).map((city, i) => <li key={i + city} className="locations__item">
       <a
-        className={`locations__item-link tabs__item ${el.isActive && `tabs__item--active`}`}
+        onClick={(evt) => {
+          evt.preventDefault();
+          onCityChange(city);
+        }}
+        className={`locations__item-link tabs__item ${city === console.log(currentCity) && `tabs__item--active`}`}
         href="#">
-        <span>{el.city}</span>
+        <span>{city}</span>
       </a>
     </li>
     )}
@@ -17,7 +20,9 @@ const CitiesList = (props) => {
 };
 
 CitiesList.propTypes = {
-  cities: PropTypes.arrayOf(CitiesPropType)
+  cities: PropTypes.object,
+  currentCity: PropTypes.string,
+  onCityChange: PropTypes.func
 };
 
 export default CitiesList;

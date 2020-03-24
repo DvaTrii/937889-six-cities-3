@@ -12,7 +12,7 @@ import App from "./components/app/app.jsx";
 const store = createStore(reducer);
 
 const Data = {
-  OFFERS_COUNT: 312,
+  // OFFERS_COUNT: 312,
   CARDS: cards,
   CITIES: cities,
   ON_CARD_HOVER: () => {}
@@ -21,7 +21,7 @@ const Data = {
 ReactDOM.render(
     <Provider store={store}>
       <App
-        offersCount = {Data.OFFERS_COUNT}
+        // offersCount = {Data.OFFERS_COUNT}
         cards = {Data.CARDS}
         cities={Data.CITIES}
         onCardHover={Data.ON_CARD_HOVER}

@@ -4,9 +4,11 @@ import {extend} from "./utils/utils.js";
 const getCities = (data) => new Set([...data.map((offer) => offer.city)]);
 
 const initialState = {
-  currentCity: getCities(offers)[0],
+  currentCity: `Amsterdam`,
   citiesList: getCities(offers),
 };
+
+console.log(initialState);
 
 const ActionType = {
   CHANGE_CITY: `CHANGE_CITY`,

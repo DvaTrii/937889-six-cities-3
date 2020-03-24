@@ -31,6 +31,3 @@ export const ReviewPropType = shape({
   date: number.isRequired,
 }).isRequired;
 
-export const CitiesPropType = shape({
-  city: string.isRequired
-});

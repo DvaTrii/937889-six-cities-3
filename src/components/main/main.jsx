@@ -1,13 +1,17 @@
 import React from "react";
+import {connect} from 'react-redux';
+
 import PropTypes from "prop-types";
-import {CardPropType, CitiesPropType} from "../prop-validator/prop-validator";
+import {CardPropType} from "../prop-validator/prop-validator";
 import Header from "../header/header.jsx";
 import OffersList from "../offers-list/offers-list.jsx";
 import Map from "../map/map.jsx";
 import CitiesList from "../cities-list/cities-list.jsx";
+import {ActionCreator} from "../../reducer.js";
 
 const Main = (props) => {
-  const {cities, offersCount, cards, onCardHover, onHeaderClick} = props;
+  const {cities, currentCity, onCityChange, cards, onCardHover, onHeaderClick} = props;
+  const currentCityCards = cards.filter((card) => card.city === currentCity);
 
   return (
     <div className="page page--gray page--main">
@@ -16,14 +20,16 @@ const Main = (props) => {
         <h1 className="visually-hidden">Cities</h1>
         <div className="tabs">
           <section className="locations container">
-            <CitiesList cities={cities} />
+            <CitiesList
+              cities={cities}
+              onCityChange={onCityChange}/>
           </section>
         </div>
         <div className="cities">
           <div className="cities__places-container container">
             <section className="cities__places places">
               <h2 className="visually-hidden">Places</h2>
-              <b className="places__found">{offersCount} places to stay in Amsterdam</b>
+              <b className="places__found">{currentCityCards.length} places to stay in {currentCity}</b>
               <form className="places__sorting" action="#" method="get">
                 <span className="places__sorting-caption">Sort by</span>
                 <span className="places__sorting-type" tabIndex="0">
@@ -52,14 +58,14 @@ const Main = (props) => {
               </form>
               <div className="cities__places-list places__list tabs__content">
                 {<OffersList
-                  cards = {cards}
+                  cards = {currentCityCards}
                   onCardHover = {onCardHover}
                   onHeaderClick = {onHeaderClick}
                   isOfferDetailed={false}/>}
               </div>
             </section>
             <div className="cities__right-section">
-              <Map cards = {cards} isOfferDetailed={false}/>
+              <Map cards = {currentCityCards} isOfferDetailed={false}/>
             </div>
           </div>
         </div>
@@ -69,11 +75,24 @@ const Main = (props) => {
 };
 
 Main.propTypes = {
-  cities: PropTypes.arrayOf(CitiesPropType),
-  offersCount: PropTypes.number.isRequired,
+  // offersCount: PropTypes.number.isRequired,
   cards: PropTypes.arrayOf(CardPropType).isRequired,
   onCardHover: PropTypes.func.isRequired,
   onHeaderClick: PropTypes.func.isRequired,
+  cities: PropTypes.object,
+  onCityChange: PropTypes.func,
+  currentCity: PropTypes.string,
 };
 
-export default Main;
+const mapStateToProps = (state) => {
+  return {
+    cities: state.citiesList,
+    currentCity: state.currentCity
+  };
+};
+
+const mapDispatchToProps = (dispatch) => ({
+  onCityChange: (city) => dispatch(ActionCreator.changeCity(city)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Main);
